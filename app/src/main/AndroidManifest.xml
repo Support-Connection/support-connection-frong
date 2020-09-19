@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.river.supportconnection">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
 
     <application
         android:allowBackup="true"
@@ -11,6 +13,21 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".Jasaninput_activity"></activity>
         <activity android:name=".RecyclerActivity" />
+        <activity android:name=".InputInfo1Activity" />
+        <activity android:name=".InputInfo2Activity" />
+        <activity android:name=".InputInfo3Activity" />
+        <activity android:name=".InputInfo4Activity" />
+        <activity android:name=".InputInfo5Activity" />
+        <activity android:name=".InputInfo5_1Activity" />
+        <activity android:name=".InputInfo6Activity" />
+        <activity android:name=".InputInfo7Activity" />
+        <activity android:name=".InputInfo7_1Activity" />
+        <activity android:name=".InputInfo7_2Activity" />
+        <activity android:name=".InputInfo7_3Activity" />
+        <activity android:name=".InputInfo7_4Activity" />
+        <activity android:name=".InputInfo7_5Activity" />
+
+
         <activity android:name=".RealMainActivity" />
         <activity android:name=".ShareActivity" />
         <activity android:name=".Register2Activity" />
