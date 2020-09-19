@@ -26,10 +26,10 @@ fdcRecycler
 
 - RecyclerView
 -	Fragment_discount : <금융지원 보기>에서 사용
-* fdc_recycler 리스트뷰 레이아웃
-* revycler_Data 데이터 클래스
-* CustomAdapter 어댑터 적용 클래스
-* activity_shincung 신청 클릭할 경우 뜨는 drawer
+fdc_recycler 리스트뷰 레이아웃
+revycler_Data 데이터 클래스
+CustomAdapter 어댑터 적용 클래스
+activity_shincung 신청 클릭할 경우 뜨는 drawer
 클릭이벤트는 RealMainActivity에서 처리해줄 예정 . . .
 
 -	Fragment_search : 쉬운지원금신청(recyclerview2개 선언, 아직 레이아웃 제작 전)
