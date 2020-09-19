@@ -2,18 +2,20 @@ package com.river.supportconnection
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
-import android.widget.LinearLayout
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import com.river.supportconnection.Adapter.CustomAdapter
-import com.river.supportconnection.Adapter.PageAdapter
-import com.river.supportconnection.Fragments.HomeFragment
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_real_main.*
+//import com.river.supportconnection.Adapter.PageAdapter
+import com.river.supportconnection.Fragments.*
 import kotlinx.android.synthetic.main.fragment_discount.*
-import kotlinx.android.synthetic.main.fragment_home.*
-import org.jetbrains.anko.startActivity
+import retrofit2.*
+import retrofit2.converter.gson.GsonConverterFactory
 
 class RealMainActivity : AppCompatActivity() {
     private lateinit var homeBtn: ImageButton
@@ -24,15 +26,57 @@ class RealMainActivity : AppCompatActivity() {
 
     private lateinit var mViewPager: ViewPager
     private lateinit var mPageAdapter: PageAdapter
+    var main:Main? = null
+
+    // 기본 data들 선언
+    var name = ""
+    var age = 0
+    var totalAmount=0
+    var cashAmount=0
+    var financialAmount=0
+    var myAsset=0
+    var supportRemain=0
+    var userId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_real_main)
 
         // 기본 data
-        val name=intent.getStringExtra("name")
-        val birth=intent.getStringExtra("birth")
-        val sex=intent.getStringExtra("sex")
+        name= intent.getStringExtra("name").toString()
+        age=intent.getIntExtra("age",0)
+        userId=intent.getIntExtra("userId",0)
+
+        // 서버 연결
+        val retrofit = Retrofit.Builder()
+            .baseUrl("http://115.85.183.20:8001")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+        val mainService: MainService = retrofit.create(MainService::class.java)
+        mainService.getMain(userId).enqueue(object: Callback<Main>{
+            override fun onResponse(call: Call<Main>, response: Response<Main>) {
+                main = response.body()
+                totalAmount = main?.totalAmount ?: 0
+                cashAmount = main?.cashAmount!!
+                financialAmount = main?.financialAmount!!
+                myAsset = main?.financialAmount!!
+                supportRemain = main?.supportRemain ?: 0
+            }
+
+            override fun onFailure(call: Call<Main>, t: Throwable) {
+                Log.e("LOGIN", t.message!!)
+                var dialog = AlertDialog.Builder(this@RealMainActivity)
+                dialog.setTitle("Error")
+                dialog.setMessage("연결 실패하였습니다.")
+                dialog.show()
+            }
+        })
+
+
+        HomeFragment().apply {
+            arguments = Bundle().apply {
+                putString("name",name)
+            }
+        }
 
         // init views
         mViewPager = findViewById(R.id.mViewpager)
@@ -70,27 +114,14 @@ class RealMainActivity : AppCompatActivity() {
         homeBtn.setImageResource(R.drawable.ic_home_blue)
 
         homeBtn.setOnClickListener {
-            fhome_text1.text = name
             mViewPager.currentItem = 0
-            // 두번째 Fragment
-            fhome_btn2.setOnClickListener {
-                mViewPager.currentItem = 1
-            }
-            // 세번째 Fragment
-            fhome_btn3.setOnClickListener {
-                fdiscount_text2.text= name+"님"
-                // 변경 필요 <1> 내용 입력 받으면 fragment_discount 열어주기
-                startActivity<Jasaninput_activity>()
-            }
         }
-
         searchBtn.setOnClickListener {
             mViewPager.currentItem = 1
         }
 
         discountBtn.setOnClickListener{
             mViewPager.currentItem = 2
-            fdiscount_text2.text= name+"님"
 
             // data 올려주기
             val data = loadData()
@@ -157,4 +188,44 @@ class RealMainActivity : AppCompatActivity() {
 
         return data
     }
+
+
+    inner class PageAdapter (fm: FragmentManager?):
+        FragmentPagerAdapter(fm!!){
+        override fun getCount(): Int {
+            return 5
+        }
+
+        override fun getItem(position: Int): Fragment {
+            return when(position){
+                0->{
+                    HomeFragment().apply {
+                        arguments =Bundle().apply {
+                            putInt("userId",this@RealMainActivity.userId)
+                            putString("name",this@RealMainActivity.name)
+                            putInt("totalAmount",this@RealMainActivity.totalAmount)
+                            putInt("cashAmount",this@RealMainActivity.cashAmount)
+                            putInt("financialAmount",this@RealMainActivity.financialAmount)
+                            putInt("myAsset",this@RealMainActivity.myAsset)
+                            putInt("supportRemain",this@RealMainActivity.supportRemain)
+                        }
+                    }
+                }
+                1->{
+                    SearchFragment()
+                }
+                2->{
+                    DiscountFragment()
+                }
+                3->{
+                    AlertFragment()
+                }
+                4->{
+                    MypageFragment()
+                }
+                else-> HomeFragment()
+            }
+        }
+    }
 }
+

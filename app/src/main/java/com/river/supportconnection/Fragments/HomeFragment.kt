@@ -1,15 +1,22 @@
 package com.river.supportconnection.Fragments
 
+import android.app.PendingIntent.getActivity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.internal.ContextUtils.getActivity
+import com.river.supportconnection.Jasaninput_activity
 import com.river.supportconnection.MainActivity
 import com.river.supportconnection.R
+import com.river.supportconnection.RealMainActivity
 import kotlinx.android.synthetic.main.activity_real_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import org.jetbrains.anko.startActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,8 +45,21 @@ class HomeFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // 버튼 클릭 이벤트 들어갈 부분!!!!!!!!!!!!!!!
-        // fhome_text1.text= name
+        fhome_text1.text = arguments?.getString("name")
+        fhome_text3.text = arguments?.getInt("totalAmount").toString()
+        fhome_text9.text = arguments?.getInt("cashAmount").toString()
+        fhome_text12.text = arguments?.getInt("financialAmount").toString()
+        fhome_text16.text = arguments?.getInt("myAsset").toString()
+        fhome_text19.text = arguments?.getInt("supportRemain").toString()
+        fhome_btn2.setOnClickListener {
+            (activity as RealMainActivity).mViewpager.currentItem = 1
+        }
+        fhome_btn3.setOnClickListener {
+            (activity as RealMainActivity).mViewpager.currentItem = 2
+        }
+        fhome_icon8.setOnClickListener {
+            // Activity 이동안됨!!!
+        }
     }
     companion object {
         // private const val ARG_NAME="name"

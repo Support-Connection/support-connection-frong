@@ -15,19 +15,18 @@ class ShareActivity : AppCompatActivity() {
 
         // 사용자 기본 data
         val name = intent.getStringExtra("name")
-        val birth = intent.getStringExtra("birth")
-        val sex = intent.getStringExtra("sex")
+        val age = intent.getIntExtra("age",0)
+        val userId = intent.getIntExtra("userId",0)
 
         // 이름 변경
         share_text1.text = "안녕하세요 " + name + "님,\n서폿커넥션에 잘오셨어요!"
 
         // -- Intent -- (Anko 사용)
-
         next_share.setOnClickListener {
             startActivity<RealMainActivity>(
                 "name" to name,
-                "birth" to birth,
-                "sex" to sex,
+                "age" to age,
+                "userId" to userId
             )
 
         }

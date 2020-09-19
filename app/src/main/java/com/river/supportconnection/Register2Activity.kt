@@ -1,30 +1,80 @@
 package com.river.supportconnection
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_register2.*
+import org.jetbrains.anko.startActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class Register2Activity : AppCompatActivity() {
+
+    var login:Login? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register2)
 
+        // Visibility
         teltag.visibility = View.INVISIBLE
         phonetag.visibility = View.INVISIBLE
 
         // login data
-        val name = intent.getStringExtra("name")
-        val reg_num1 = intent.getStringExtra("reg_num1")
-        val reg_num2 = intent.getStringExtra("reg_num2")
+        val name = intent.getStringExtra("name").toString()
+        val regNum1 = intent.getStringExtra("reg_num1")
+        val year = regNum1?.substring(0,2)?.toInt() ?: 0
+        var age = 0
+        age = if(year<=20){
+            2021-(2000+year)
+        } else{
+            2021-(1900+year)
+        }
+
+        // 서버랑 통신
+        var retrofit = Retrofit.Builder()
+            .baseUrl("http://115.85.183.20:8001")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        var loginService: LoginService = retrofit.create(LoginService::class.java)
+
+
+        // Intent
+        next_rgstr2.setOnClickListener {
+            var phoneNumber = phone_edit.text.toString()
+            var agency = tel_edit.text.toString()
+
+            loginService.requestLogin(name,agency,phoneNumber,age).enqueue(object: Callback<Login>{
+                override fun onResponse(call: Call<Login>, response: Response<Login>) {
+                    login = response.body()
+                    var userId = login?.userId
+                    startActivity<ShareActivity>(
+                        "name" to name,
+                        "age" to age,
+                        "userId" to userId
+                    )
+                    finish()
+                }
+
+                override fun onFailure(call: Call<Login>, t: Throwable) {
+                    Log.e("LOGIN", t.message!!)
+                    var dialog = AlertDialog.Builder(this@Register2Activity)
+                    dialog.setTitle("Error")
+                    dialog.setMessage("로그인에 실패하였습니다.")
+                    dialog.show()
+                }
+            })
+        }
 
         // back intent 처리
         beforebtn2.setOnClickListener {
@@ -104,16 +154,7 @@ class Register2Activity : AppCompatActivity() {
         // 전화번호 hyphen
         phone_edit.addTextChangedListener(PhoneNumberFormattingTextWatcher())
 
-        // 다음 page로 이동 > RegActivity 죽이기
-        next_rgstr2.setOnClickListener {
-            val intent = Intent(this, ShareActivity::class.java)
-            intent.putExtra("name",name)
-            intent.putExtra("birth",reg_num1)
-            intent.putExtra("sex",reg_num2)
-            startActivity(intent)
 
-        }
 
-        // 서버랑 통신해서 로그인/회원가입
     }
 }

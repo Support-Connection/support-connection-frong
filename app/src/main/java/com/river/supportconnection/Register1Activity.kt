@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_register1.*
+import org.jetbrains.anko.startActivity
 
 class Register1Activity : AppCompatActivity() {
     lateinit var editname:EditText
@@ -40,13 +41,14 @@ class Register1Activity : AppCompatActivity() {
         var c= false
 
 
-        // 다음 Intent로 넘어가기
+        // 다음 Intent
         nextbtn.setOnClickListener {
-            val intent=Intent(this,Register2Activity::class.java)
-            intent.putExtra("name",editname.text.toString())
-            intent.putExtra("reg_num1",editnum1.text.toString())
-            intent.putExtra("reg_num2",editnum2.text.toString())
-            startActivity(intent)
+            var name = editname.text.toString()
+            var reg_num1 = editnum1.text.toString()
+            startActivity<Register2Activity>(
+                "name" to name,
+                "reg_num1" to reg_num1
+            )
         }
 
         // 이름 Listener
