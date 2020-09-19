@@ -1,4 +1,4 @@
-# support-connection-front
+# support-connection-front (Kotlin)
 - 오류/유의 사항
 1.	TextWatcher 사용할 경우 앱이 강종되는 현상
 > RegisterActivity 외에는 따라서 값 입력했는지 안했는지 검사X
