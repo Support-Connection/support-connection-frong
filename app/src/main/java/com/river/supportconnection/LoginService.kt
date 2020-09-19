@@ -10,7 +10,7 @@ interface LoginService {
         "Accept: application/json",
         "Content-Type: application/json;charset=UTF-8"
     )
-    @POST("/user/login")
+    @PUT("/user/login")
     fun requestLogin(
         @Field("name") name: String,
         @Field("agency") agency: String,

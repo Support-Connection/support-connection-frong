@@ -10,10 +10,7 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.internal.ContextUtils.getActivity
-import com.river.supportconnection.Jasaninput_activity
-import com.river.supportconnection.MainActivity
-import com.river.supportconnection.R
-import com.river.supportconnection.RealMainActivity
+import com.river.supportconnection.*
 import kotlinx.android.synthetic.main.activity_real_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.startActivity
@@ -51,6 +48,8 @@ class HomeFragment : Fragment() {
         fhome_text12.text = arguments?.getInt("financialAmount").toString()
         fhome_text16.text = arguments?.getInt("myAsset").toString()
         fhome_text19.text = arguments?.getInt("supportRemain").toString()
+        fhome_btn1.setOnClickListener({
+        })
         fhome_btn2.setOnClickListener {
             (activity as RealMainActivity).mViewpager.currentItem = 1
         }
