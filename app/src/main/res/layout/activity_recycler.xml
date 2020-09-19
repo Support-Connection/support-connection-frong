@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecyclerActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="35dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/recycler_view"
+                android:layout_width="0dp"
+                android:layout_height="378dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_78" />
+
+            <ImageButton
+                android:id="@+id/recycler_icon1"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginTop="53dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_124" />
+
+            <TextView
+                android:id="@+id/recycler_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="122dp"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/noto_sans_bold"
+                android:singleLine="true"
+                android:text="'힘내라 대한민국' 특별운영자금"
+                android:textColor="#454545"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/recycler_view"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="33sp" />
+
+            <TextView
+                android:id="@+id/recycler_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/noto_sans"
+                android:singleLine="true"
+                android:text="* 금융위원회 사무처 금융정책국 산업금융과"
+                android:textColor="#747f89"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recycler_text1"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text1"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="20sp" />
+
+            <Button
+                android:id="@+id/recycler_btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginTop="10dp"
+                android:background=" #e8f5ff"
+                android:fontFamily="@font/noto_sans_bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="최대 0.60%p"
+                android:textColor="#3B85BC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/recycler_view"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recycler_text2"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/recycler_btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:background=" #e8f5ff"
+                android:fontFamily="@font/noto_sans_bold"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="*최대 100억원"
+                android:textColor="#3B85BC"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/recycler_btn1"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/recycler_icon2"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@mipmap/man_image_foreground" />
+
+            <ImageView
+                android:id="@+id/recycler_view2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/recycler_view"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/ic_71" />
+
+            <TextView
+                android:id="@+id/recycler_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="143dp"
+                android:layout_marginLeft="143dp"
+                android:layout_marginTop="55dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="절감가능 "
+                android:textColor="#454545"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/recycler_view2"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="24sp" />
+
+            <TextView
+                android:id="@+id/recycler_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans"
+                android:text="이자비용"
+                android:textColor="#454545"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/recycler_text3"
+                app:layout_constraintTop_toTopOf="@+id/recycler_text3"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="24sp" />
+
+            <TextView
+                android:id="@+id/recycler_text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="55dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="220,000 원"
+                android:textColor=" #50b3fc"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
+                app:layout_constraintEnd_toEndOf="@+id/recycler_view2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/recycler_view2"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/recycler_text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="상세정보 보기"
+                android:textColor="#454545"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_view"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="27sp" />
+
+            <ImageButton
+                android:id="@+id/recycler_icon3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recycler_text6"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text6"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_16" />
+
+            <TextView
+                android:id="@+id/recycler_text7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="신청조건"
+                android:textColor="#454545"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/recycler_icon3"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text6"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="24sp" />
+
+            <TextView
+                android:id="@+id/recycler_text8"
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/round_corner"
+                android:fontFamily="@font/noto_sans"
+                android:paddingLeft="21dp"
+                android:paddingTop="18dp"
+                android:paddingRight="18dp"
+                android:paddingBottom="17dp"
+                android:text="TextView"
+                android:textColor="#75808a "
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recycler_icon3"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_icon3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/recycler_icon4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recycler_icon3"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text8"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_16" />
+
+            <TextView
+                android:id="@+id/recycler_text9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="지원내용"
+                android:textColor="#454545 "
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/recycler_icon4"
+                app:layout_constraintTop_toTopOf="@+id/recycler_icon4"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="24sp" />
+
+            <TextView
+                android:id="@+id/recycler_text10"
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:background="@drawable/round_corner"
+                android:fontFamily="@font/noto_sans"
+                android:paddingLeft="21dp"
+                android:paddingTop="18dp"
+                android:paddingRight="18dp"
+                android:paddingBottom="17dp"
+                android:text="TextView"
+                android:textColor="#75808a "
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recycler_icon4"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_icon4"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/recycler_icon5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recycler_text10"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text10"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_16" />
+
+            <TextView
+                android:id="@+id/recycler_text11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="신청방법"
+                android:textColor="#454545"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/recycler_icon5"
+                app:layout_constraintTop_toTopOf="@+id/recycler_icon5"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="24sp" />
+
+            <TextView
+                android:id="@+id/recycler_text12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="@string/rc_text10"
+                android:textColor=" #50b3fc "
+                android:textSize="16sp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recycler_icon5"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_icon5"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="24sp" />
+
+            <TextView
+                android:id="@+id/recycler_text13"
+                android:layout_width="371dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_corner"
+                android:fontFamily="@font/noto_sans"
+                android:paddingLeft="21dp"
+                android:paddingTop="18dp"
+                android:paddingRight="18dp"
+                android:paddingBottom="17dp"
+                android:text="TextView"
+                android:textColor="#75808a "
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/recycler_icon5"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text12"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/recycler_applybtn"
+                style="@style/BtnStyle"
+                android:layout_width="@dimen/nextbtn_width"
+                android:layout_height="@dimen/nextbtn_height"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/btnbackground"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="신청하기"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text13"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

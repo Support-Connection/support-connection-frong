@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="cursorNormal">#747f89</color>
+    <color name="cursorActive">#50b3fc</color>
+
+    // Transparent Colors
+    <color name="white">#FFFFFF</color>
+    <color name="Transparent1">#FF0000</color>
+    <color name="Transparent2">#F44336</color>
+    <color name="Transparent3">#FFEB3B</color>
+    <color name="Transparent4">#8BC34A</color>
+    <color name="Transparent5">#03A9F4</color>
+</resources>

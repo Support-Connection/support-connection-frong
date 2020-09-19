@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">SupportConnection</string>
+    // Splash Activity
+    <string name="app_naming">Support\nConnection</string>
+    <string name="textInfo">정부지원금 자격요건 체크서비스</string>
+    // Main Activity
+    <string name="top_text">Support</string>
+    <string name="middle_text">🔍</string>
+    <string name="bottom_text">나의 정부지원금을 찾아보자!</string>
+    <string name="bottom_text2">서폿커넥션에서 숨겨진 나의\n정부지원금을 찾고 관리해보세요!</string>
+    <string name="start_btn">시작하기</string>
+    // Register1Activity
+    <string name="next_btn">다음으로</string>
+    <string name="reg_text1">당신은 어떤 사람인가요?</string>
+    <string name="reg_text2">주민등록상 정보를 입력해주세요.</string>
+    // Register2Activity
+    <string name="next2_btn">가입하기</string>
+    <string name="reg2_text1">휴대폰 정보를 알려주세요!</string>
+    <string name="reg2_text2">휴대폰 인증을 위한 절차입니다.</string>
+    // ShareActivity
+    <string name="share_text2">로그인이 성공적으로 완료되었습니다.</string>
+    // RealMainActivity
+    <string name="rm_text2">님의 최대 예상지원금</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    // HomeFragement
+    <string name="hftext6"> 30초면 가능해요 🔍</string>
+    <string name="hftext7">나의 예상지원금 확인하기</string>
+    <string name="hftext5">쉬운 지원금 신청</string>
+    <string name="hftext8">최대 현금지원</string>
+    <string name="hftext11">최대 금융지원</string>
+    <string name="hftext15">자산 기본정보</string>
+    <string name="hftext18">정부지원금 잔액</string>
+
+    // Recycler Activity
+    <string name="rc_text10">산업은행 전국 영업점을 방무하여 신청\n(홈페이지 또는 고객센터 등 유선상담 가능)</string>
+
+    // Input Strings
+    <string name="jasan_text1">자산 기본 정보를 입력해주세요!</string>
+    <string name="jasan_text2">나의 연소득과 자산규모를 알려주세요.</string>
+</resources>

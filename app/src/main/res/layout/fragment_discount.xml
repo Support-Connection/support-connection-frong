@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fdiecountView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.DiscountFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_icon2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fdiscount_icon2"
+                app:srcCompat="@drawable/ic_4" />
+
+            <TextView
+                android:id="@+id/fdiscount_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="금융비용 줄이기"
+                android:textColor="#454545"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/fdiscount_icon1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="53dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_text1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_124" />
+
+            <TextView
+                android:id="@+id/fdiscount_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="김서폿님"
+                android:textColor="#454545"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/fdiscount_text1"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text1"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="24sp" />
+
+            <TextView
+                android:id="@+id/fdiscount_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/noto_sans"
+                android:text="의 기본이자율"
+                android:textColor="#454545"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_text2"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text1"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="24sp" />
+
+            <Button
+                android:id="@+id/fdiscount_btn1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@mipmap/input2_image_foreground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_text3"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="연"
+                android:textColor="#50b3fc"
+                android:textSize="45sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/fdiscount_text2"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscounttext_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="12.9%"
+                android:textColor="#50b3fc"
+                android:textSize="37sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.004"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_text4"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text3"
+                app:layout_constraintVertical_bias="0.001" />
+
+            <ImageView
+                android:id="@+id/fdiscount_icon2"
+                android:layout_width="222dp"
+                android:layout_height="222dp"
+                android:layout_marginTop="270dp"
+                android:src="@mipmap/circular_image_foreground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="신용등급"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_icon2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/fdiscount_icon2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="3등급"
+                android:textSize="38sp"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_icon2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text6"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="57dp"
+                android:layout_marginLeft="57dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="현재 이자비용"
+                android:textColor="#747f89"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_icon2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="46dp"
+                android:layout_marginRight="46dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="절감가능 이자비용"
+                android:textColor="#747f89"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_text8"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_icon2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/slash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="|"
+                android:textColor="#C9C9C9"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/fdiscount_text9"
+                app:layout_constraintHorizontal_bias="0.547"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_text8"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_icon2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="44dp"
+                android:layout_marginLeft="44dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="820,000 원"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/fdiscount_text8"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text8"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="46dp"
+                android:layout_marginRight="46dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="220,000 원"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_text10"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text9" />
+
+            <ImageView
+                android:id="@+id/fdiscount_view1"
+                android:layout_width="0dp"
+                android:layout_height="297dp"
+                android:layout_marginTop="577dp"
+                app:layout_constraintBottom_toBottomOf="@+id/slash"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.003"
+                app:srcCompat="@drawable/ic_3" />
+
+            <TextView
+                android:id="@+id/fdiscount_text12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="자산 기본 정보"
+                android:textColor="#454545"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_view1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/slash"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="27sp" />
+
+            <ImageView
+                android:id="@+id/fdiscount_icon3"
+                android:layout_width="41dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="27dp"
+                android:src="@mipmap/congrats_image_foreground"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_view1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/fdiscount_text12"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text12"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/fdiscount_icon4"
+                android:layout_width="41dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="31dp"
+                android:src="@mipmap/dungi_image_foreground"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_view1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/fdiscount_icon3"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_icon3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text13"
+                style="@style/fhome_style1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="27dp"
+                android:text="나의 연 소득"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_view1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_icon3"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text12"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text14"
+                style="@style/fhome_style2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20,000,000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/fdiscount_text13"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text13"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text15"
+                style="@style/fhome_style3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="130dp"
+                android:text="원"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_view1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_text14"
+                app:layout_constraintTop_toTopOf="@+id/fdiscount_view1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/fdiscount_icon5"
+                android:layout_width="49dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="73dp"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:src="@mipmap/input_image_foreground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/slash"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text16"
+                style="@style/fhome_style1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:text="나의 자산규모"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_icon4"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text14"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text17"
+                style="@style/fhome_style2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10,620,000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/fdiscount_text16"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text16"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text18"
+                style="@style/fhome_style3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="49dp"
+                android:text="원"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_view1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/fdiscount_text17"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text15"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/fdiscount_icon6"
+                android:layout_width="49dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="55dp"
+                android:layout_marginRight="55dp"
+                android:layout_marginBottom="40dp"
+                android:src="@mipmap/input_image_foreground"
+                app:layout_constraintBottom_toBottomOf="@+id/fdiscount_view1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/fdiscount_icon5"
+                app:layout_constraintTop_toTopOf="@+id/fdiscount_view1"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/fdiscount_text19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginLeft="31dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="금융지원 보기"
+                android:textColor="#454545"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/fdiscount_view1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_view1"
+                app:layout_constraintVertical_bias="0.0"
+                app:lineHeight="18sp" />
+
+            <ImageView
+                android:id="@+id/fdiscount_icon7"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:src="@mipmap/usu_image_foreground"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text7"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fdiscount_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fdiscount_text19"
+                app:layout_constraintVertical_bias="0.0">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</RelativeLayout>
