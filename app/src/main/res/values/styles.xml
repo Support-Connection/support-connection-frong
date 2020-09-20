@@ -1,0 +1,152 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    // Splash
+    <style name="SplashStyle">
+        <item name="android:textSize">35sp</item>
+        <item name="android:lineSpacingExtra">-1.05sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+    <style name="SplashStyle2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">0.42sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
+
+    // Main
+    <style name="TopStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="fontFamily">@font/noto_sans_bold</item>
+        <item name="android:textColor">#50b3fc</item>
+    </style>
+    <style name="BottomStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:textColor">#454545</item>
+    </style>
+    <style name="BottomStyle2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">-0.42sp</item>
+        <item name="android:textColor">#747f89</item>
+    </style>
+    <style name="BtnStyle">
+        <item name="android:layout_width">335dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name = "ChoiceBtnStyle">
+        <item name="android:layout_width">320dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:lineSpacingExtra">9sp</item>
+        <item name="android:textColor">#4e5968</item>
+        <item name="android:textSize">18sp</item>
+        <item name ="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="EditStyle">
+        <item name="colorControlNormal">@color/cursorNormal</item>
+        <item name="colorControlActivated">@color/cursorActive</item>
+    </style>
+
+    // RegisterActivity
+    <style name="reg_style1">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#454545</item>
+        <item name="android:lineSpacingExtra">11sp</item>
+        <item name="fontFamily">@font/noto_sans_bold</item>
+    </style>
+    <style name="reg_style2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#747f89</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="fontFamily">@font/noto_sans_bold</item>
+    </style>
+
+    // Register2Activity
+    <style name="tel_style">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:textColor">#4e5968</item>
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">22sp</item>
+    </style>
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="background">@android:color/transparent</item>
+    </style>
+
+    // RealMain
+    <style name="rm_style1">
+        <item name="fontFamily">@font/noto_sans_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">left</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:textColor">#454545</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+    </style>
+    <style name="rm_style2">
+        <item name="fontFamily">@font/noto_sans</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">left</item>
+        <item name="lineHeight">24sp</item>
+        <item name="android:textColor">#454545</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+    </style>
+    <style name="rm_style3">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:gravity">left</item>
+        <item name="lineHeight">37sp</item>
+        <item name="android:textColor">#50b3fc</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+    </style>
+    <style name="rm_style4">
+        <item name="fontFamily">@font/noto_sans_bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:gravity">left</item>
+        <item name="lineHeight">37sp</item>
+        <item name="android:textColor">#50b3fc</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+    </style>
+
+    // FragmentHome
+    <style name="fhome_style1">
+        <item name="fontFamily">@font/noto_sans</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">20sp</item>
+        <item name="android:textColor">#747f89</item>
+    </style>
+    <style name="fhome_style2">
+        <item name="fontFamily">@font/noto_sans_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">19sp</item>
+        <item name="android:textColor">#454545</item>
+    </style>
+    <style name="fhome_style3">
+        <item name="fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">19sp</item>
+        <item name="android:textColor">#454545</item>
+    </style>
+
+    // Tag Styles
+    <style name="tagstyle">
+        <item name="android:textColor">#3B85BC</item>
+        <item name="fontFamily">@font/noto_sans_bold</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

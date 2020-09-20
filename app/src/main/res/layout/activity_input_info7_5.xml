@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Info7_5Constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="29sp"
+    tools:context=".InputInfo7_5Activity">
+
+
+    <Button
+        android:id="@+id/beforebtn15"
+        android:layout_width="17dp"
+        android:layout_height="15.8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="56dp"
+        android:background="@mipmap/before_foreground"
+        android:textColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/info7_5_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="24sp"
+        android:text="📊"
+        android:textColor="#454545"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/beforebtn15"
+        app:layout_constraintTop_toBottomOf="@+id/beforebtn15"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/info7_5_text1"
+        style="@style/reg_style1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:letterSpacing="-0.03"
+        android:text="매출의 규모는 어느정도 인가요?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/info7_5_icon"
+        app:layout_constraintTop_toBottomOf="@+id/info7_5_icon"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/info7_5_text2"
+        style="@style/reg_style2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:letterSpacing="-0.03"
+        android:text="연매출 기준 천만 원 단위로 입력해주세요."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/info7_5_text1"
+        app:layout_constraintTop_toBottomOf="@+id/info7_5_text1"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <EditText
+        android:id="@+id/annual_sale_edit"
+        android:layout_width="356dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="152dp"
+        android:ems="10"
+        android:fontFamily="@font/noto_sans_bold"
+        android:hint="매출 규모"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:inputType="number"
+        android:textColorHint="#747F89"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/info7_5_text2"
+        app:layout_constraintTop_toBottomOf="@+id/info7_5_text2"
+        android:theme="@style/EditStyle"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/child_age_won"
+        android:layout_width="44dp"
+        android:layout_height="33dp"
+        android:letterSpacing="-0.03"
+        android:lineSpacingExtra="11sp"
+        android:text="천만원"
+        android:textColor="#454545"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/annual_sale_edit"
+        app:layout_constraintEnd_toEndOf="@+id/annual_sale_edit"
+        app:layout_constraintTop_toTopOf="@+id/annual_sale_edit"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <Button
+        android:id="@+id/next_info7_5"
+        style="@style/BtnStyle"
+        android:layout_width="@dimen/nextbtn_width"
+        android:layout_height="@dimen/nextbtn_height"
+        android:layout_marginBottom="58dp"
+        android:background="@drawable/btnbackground"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="다음으로"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

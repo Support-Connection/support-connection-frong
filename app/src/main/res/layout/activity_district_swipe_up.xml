@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DistrictSwipeupContainer"
+    android:layout_width="match_parent"
+    android:layout_height="438dp"
+    android:orientation="vertical"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <TextView
+        android:id="@+id/district_text"
+        android:layout_width="316dp"
+        android:layout_height="54dp"
+        android:fontFamily="@font/noto_sans_bold"
+        android:gravity="bottom"
+        android:paddingLeft="25dp"
+        android:text="군/구 선택"
+        android:textColor="#454545"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/district_close_btn"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="27dp"
+        android:background="@mipmap/close_image_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/district_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="382dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/district_text">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/DistrictConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/district_text1"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="25dp"
+                    android:text="강남구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/district_text2"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="강동구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/district_text1"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text1"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/district_text3"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="강북구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/district_text2"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text2"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/district_text4"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="강서구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/district_text3"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text3"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/district_text5"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="관악구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/district_text4"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text4"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/district_text6"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="광진구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/district_text5"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text5"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/district_text7"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="구로구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/district_text6"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text6"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/district_text8"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="금천구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/district_text7"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text7"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/district_text9"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="노원구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/district_text8"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text8"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/district_text10"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="도봉구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/district_text9"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text9"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/district_text11"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="동대문구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/district_text10"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text10"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/district_text12"
+                    style="@style/tel_style"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:text="동작구"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/district_text11"
+                    app:layout_constraintTop_toBottomOf="@+id/district_text11"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

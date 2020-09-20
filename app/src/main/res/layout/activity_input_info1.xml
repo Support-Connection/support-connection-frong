@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Info1Constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="29sp"
+    tools:context=".InputInfo1Activity">
+
+
+    <Button
+        android:id="@+id/beforebtn3"
+        android:layout_width="17dp"
+        android:layout_height="15.8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="56dp"
+        android:background="@mipmap/before_foreground"
+        android:textColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/info1_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="24sp"
+        android:text="🏠"
+        android:textColor="#454545"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/beforebtn3"
+        app:layout_constraintTop_toBottomOf="@+id/beforebtn3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/info1_text1"
+        style="@style/reg_style1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:letterSpacing="-0.03"
+        android:text="현재 거주지역은 어딘가요?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/info1_icon"
+        app:layout_constraintTop_toBottomOf="@+id/info1_icon"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/info1_text2"
+        style="@style/reg_style2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:letterSpacing="-0.03"
+        android:text="주민등록상의 주소를 입력해주세요."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/info1_text1"
+        app:layout_constraintTop_toBottomOf="@+id/info1_text1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/down_province"
+        android:layout_width="14dp"
+        android:layout_height="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/province_edit"
+        app:layout_constraintEnd_toEndOf="@+id/province_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/province_edit"
+        app:layout_constraintTop_toTopOf="@+id/province_edit"
+        app:srcCompat="@mipmap/down_image_foreground" />
+
+    <EditText
+        android:id="@+id/province_edit"
+        android:layout_width="356dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="62dp"
+        android:ems="10"
+        android:fontFamily="@font/noto_sans_bold"
+        android:hint="시/도 선택"
+        android:focusable="false"
+        android:textColorHint="#747F89"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/info1_text2"
+        app:layout_constraintTop_toBottomOf="@+id/info1_text2"
+        android:theme="@style/EditStyle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/down_district"
+        android:layout_width="14dp"
+        android:layout_height="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/district_edit"
+        app:layout_constraintEnd_toEndOf="@+id/district_edit"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/district_edit"
+        app:layout_constraintTop_toTopOf="@+id/district_edit"
+        app:srcCompat="@mipmap/down_image_foreground" />
+
+    <EditText
+        android:id="@+id/district_edit"
+        android:layout_width="356dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="63dp"
+        android:ems="10"
+        android:fontFamily="@font/noto_sans_bold"
+        android:hint="군/구 선택"
+        android:inputType="text"
+        android:focusable="false"
+        android:maxLength="13"
+        android:textColorHint="#747F89"
+        android:theme="@style/EditStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/province_edit"
+        app:layout_constraintTop_toBottomOf="@+id/province_edit"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/next_info1"
+        style="@style/BtnStyle"
+        android:layout_width="@dimen/nextbtn_width"
+        android:layout_height="@dimen/nextbtn_height"
+        android:layout_marginBottom="58dp"
+        android:background="@drawable/btnbackground"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="다음으로"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/provincetag"
+        android:layout_width="118dp"
+        android:layout_height="91dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info1_text2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/province_image_foreground" />
+
+    <ImageView
+        android:id="@+id/districttag"
+        android:layout_width="118dp"
+        android:layout_height="91dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.023"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/province_edit"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/district_image_foreground" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

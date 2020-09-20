@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Info3Constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="29sp"
+    tools:context=".InputInfo3Activity">
+
+
+    <Button
+        android:id="@+id/beforebtn5"
+        android:layout_width="17dp"
+        android:layout_height="15.8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="56dp"
+        android:background="@mipmap/before_foreground"
+        android:textColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/info3_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="24sp"
+        android:text="💰"
+        android:textColor="#454545"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/beforebtn5"
+        app:layout_constraintTop_toBottomOf="@+id/beforebtn5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/info3_text1"
+        style="@style/reg_style1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:letterSpacing="-0.03"
+        android:text="연 소득이 어떻게 되시나요?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/info3_icon"
+        app:layout_constraintTop_toBottomOf="@+id/info3_icon"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/info3_text2"
+        style="@style/reg_style2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:letterSpacing="-0.03"
+        android:text="만원 단위로 연 소득을 작성해주세요."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/info3_text1"
+        app:layout_constraintTop_toBottomOf="@+id/info3_text1"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+
+    <EditText
+        android:id="@+id/income_edit"
+        android:layout_width="356dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="152dp"
+        android:ems="10"
+        android:fontFamily="@font/noto_sans_bold"
+        android:hint="연 소득"
+        android:textColorHint="#747F89"
+        android:inputType="number"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/info3_text2"
+        app:layout_constraintTop_toBottomOf="@+id/info3_text2"
+        android:theme="@style/EditStyle"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/income_won"
+        android:layout_width="44dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:letterSpacing="-0.03"
+        android:lineSpacingExtra="11sp"
+        android:text="만 원"
+        android:textColor="#454545"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/income_edit"
+        app:layout_constraintEnd_toEndOf="@+id/income_edit"
+        app:layout_constraintTop_toTopOf="@+id/income_edit"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <Button
+        android:id="@+id/next_info3"
+        style="@style/BtnStyle"
+        android:layout_width="@dimen/nextbtn_width"
+        android:layout_height="@dimen/nextbtn_height"
+        android:layout_marginBottom="58dp"
+        android:background="@drawable/btnbackground"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="다음으로"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

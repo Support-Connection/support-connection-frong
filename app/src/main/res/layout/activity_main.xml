@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textTop"
+        style="@style/TopStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="49dp"
+        android:text="@string/top_text"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/login_middle3"
+        android:layout_width="289dp"
+        android:layout_height="289dp"
+        android:layout_marginTop="117dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/login_middle3_foreground" />
+
+    <ImageView
+        android:id="@+id/login_middle2"
+        android:layout_width="202dp"
+        android:layout_height="202dp"
+        app:layout_constraintBottom_toBottomOf="@+id/login_middle3"
+        app:layout_constraintEnd_toEndOf="@+id/login_middle3"
+        app:layout_constraintStart_toStartOf="@+id/login_middle3"
+        app:layout_constraintTop_toTopOf="@+id/login_middle3"
+        app:srcCompat="@mipmap/login_middle2_foreground" />
+
+    <ImageView
+        android:id="@+id/login_middle1"
+        android:layout_width="204dp"
+        android:layout_height="204dp"
+        app:layout_constraintBottom_toBottomOf="@+id/login_middle3"
+        app:layout_constraintEnd_toEndOf="@+id/login_middle3"
+        app:layout_constraintStart_toStartOf="@+id/login_middle3"
+        app:layout_constraintTop_toTopOf="@+id/login_middle3"
+        app:srcCompat="@mipmap/login_middle" />
+
+    <TextView
+        android:id="@+id/textMid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/middle_text"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/login_middle2"
+        app:layout_constraintEnd_toEndOf="@+id/login_middle2"
+        app:layout_constraintStart_toStartOf="@+id/login_middle2"
+        app:layout_constraintTop_toTopOf="@+id/login_middle2" />
+
+    <TextView
+        android:id="@+id/textBottom"
+        style="@style/BottomStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="@string/bottom_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_middle3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textBottom2"
+        style="@style/BottomStyle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/noto_sans_bold"
+        android:gravity="center"
+        android:text="@string/bottom_text2"
+        app:layout_constraintBottom_toTopOf="@+id/startbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBottom"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/startbtn"
+        style="@style/BtnStyle"
+        android:layout_width="@dimen/nextbtn_width"
+        android:layout_height="@dimen/nextbtn_height"
+        android:layout_marginBottom="58dp"
+        android:background="@drawable/btnbackground"
+        android:fontFamily="@font/noto_sans_bold"
+        android:text="@string/start_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textBottom"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
