@@ -13,6 +13,8 @@ class InputInfo2Activity : AppCompatActivity() {
 
         val province = intent.getStringExtra("province")
         val district = intent.getStringExtra("district")
+        val userId = intent.getIntExtra("user_id",0)
+        val age = intent.getIntExtra("age",0)
 
 
         // back intent 처리
@@ -25,6 +27,8 @@ class InputInfo2Activity : AppCompatActivity() {
             intent.putExtra("province",province)
             intent.putExtra("district",district)
             intent.putExtra("incomeGroup",0);
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
             startActivity(intent)
         }
 
@@ -33,6 +37,8 @@ class InputInfo2Activity : AppCompatActivity() {
             intent.putExtra("province",province)
             intent.putExtra("district",district)
             intent.putExtra("incomeGroup",1);
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
             startActivity(intent)
         }
 
@@ -41,6 +47,8 @@ class InputInfo2Activity : AppCompatActivity() {
             intent.putExtra("province",province)
             intent.putExtra("district",district)
             intent.putExtra("incomeGroup",2);
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
             startActivity(intent)
         }
 

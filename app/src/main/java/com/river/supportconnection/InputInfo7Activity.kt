@@ -20,6 +20,8 @@ class InputInfo7Activity: AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_info7)
 
+        val userId = intent.getIntExtra("user_id",0)
+        val age = intent.getIntExtra("age",0)
         val province = intent.getStringExtra("province")
         val district = intent.getStringExtra("district")
         val incomeGroup = intent.getIntExtra("incomeGroup",0)
@@ -43,8 +45,7 @@ class InputInfo7Activity: AppCompatActivity()  {
 
         info7_button1.setOnClickListener {
             //var userId = HomeFragment().arguments?.getInt("userId")
-            var userId = 6
-            var condition:Condition = Condition(userId,province.toString(),district.toString(),0,20,incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,0,0,0,"",0,0)
+            var condition:Condition = Condition(userId.toString().toInt() ,province.toString(),district.toString(),0,age.toString().toInt(),incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,0,0,0,"",0,0)
             conditionService.requiresCondition(condition).enqueue(object: Callback<Conditions> {
                 override fun onResponse(call: Call<Conditions>, response: Response<Conditions>) {
                     Log.d("Responseee:: ", response.body().toString())
@@ -65,6 +66,8 @@ class InputInfo7Activity: AppCompatActivity()  {
 
         info7_button2.setOnClickListener {
             val intent = Intent(this, InputInfo7_1Activity::class.java)
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
             intent.putExtra("province",province)
             intent.putExtra("district",district)
             intent.putExtra("incomeGroup",incomeGroup);
@@ -79,6 +82,8 @@ class InputInfo7Activity: AppCompatActivity()  {
 
         info7_button3.setOnClickListener {
             val intent = Intent(this, InputInfo7_2Activity::class.java)
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
             intent.putExtra("province",province)
             intent.putExtra("district",district)
             intent.putExtra("incomeGroup",incomeGroup);
@@ -93,6 +98,8 @@ class InputInfo7Activity: AppCompatActivity()  {
 
         info7_button4.setOnClickListener {
             val intent = Intent(this, InputInfo7_3Activity::class.java)
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
             intent.putExtra("province",province)
             intent.putExtra("district",district)
             intent.putExtra("incomeGroup",incomeGroup);
@@ -107,8 +114,7 @@ class InputInfo7Activity: AppCompatActivity()  {
 
         info7_button5.setOnClickListener {
             //var userId = HomeFragment().arguments?.getInt("userId")
-            var userId = 6
-            var condition:Condition = Condition(userId,province.toString(),district.toString(),0,20,incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,4,0,0,"",0,0)
+            var condition:Condition = Condition(userId.toString().toInt() ,province.toString(),district.toString(),0,age.toString().toInt(),incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,4,0,0,"",0,0)
             conditionService.requiresCondition(condition).enqueue(object: Callback<Conditions> {
                 override fun onResponse(call: Call<Conditions>, response: Response<Conditions>) {
                     Log.d("Responseee:: ", response.body().toString())

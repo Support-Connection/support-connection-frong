@@ -22,8 +22,8 @@ class InputInfo1Activity : AppCompatActivity() {
         districttag.visibility = View.INVISIBLE
 
         // login data
-        //val user_id = intent.getStringExtra("user_id")
-
+        val userId = intent.getIntExtra("user_id",0)
+        val age = intent.getIntExtra("age",0)
         // back intent 처리
         beforebtn3.setOnClickListener {
             finish()
@@ -78,7 +78,9 @@ class InputInfo1Activity : AppCompatActivity() {
         // 다음 page로 이동 > RegActivity 죽이기
         next_info1.setOnClickListener {
             val intent = Intent(this, InputInfo2Activity::class.java)
-           intent.putExtra("province",province_edit.text.toString())
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
+            intent.putExtra("province",province_edit.text.toString())
             intent.putExtra("district",district_edit.text.toString())
             startActivity(intent)
 

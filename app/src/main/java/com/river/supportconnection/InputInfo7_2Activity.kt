@@ -19,6 +19,8 @@ class InputInfo7_2Activity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_info7_2)
 
+        val userId = intent.getIntExtra("user_id",0)
+        val age = intent.getIntExtra("age",0)
         val province = intent.getStringExtra("province")
         val district = intent.getStringExtra("district")
         val incomeGroup = intent.getIntExtra("incomeGroup", 0)
@@ -44,13 +46,8 @@ class InputInfo7_2Activity: AppCompatActivity() {
 
         info7_2_button1.setOnClickListener {
             //var userId = HomeFragment().arguments?.getInt("userId")
-            var userId = 6
             var condition: Condition = Condition(
-                userId,
-                province.toString(),
-                district.toString(),
-                0,
-                20,
+                userId.toString().toInt() ,province.toString(),district.toString(),0,age.toString().toInt(),
                 incomeGroup,
                 income,
                 isMarried,
@@ -85,13 +82,8 @@ class InputInfo7_2Activity: AppCompatActivity() {
 
         info7_2_button2.setOnClickListener {
             //var userId = HomeFragment().arguments?.getInt("userId")
-            var userId = 6
             var condition: Condition = Condition(
-                userId,
-                province.toString(),
-                district.toString(),
-                0,
-                20,
+                userId.toString().toInt() ,province.toString(),district.toString(),0,age.toString().toInt(),
                 incomeGroup,
                 income,
                 isMarried,

@@ -23,7 +23,10 @@ class ShareActivity : AppCompatActivity() {
 
         // -- Intent -- (Anko 사용)
         next_share.setOnClickListener {
-            startActivity<InputInfo1Activity>()
+            startActivity<InputInfo1Activity>(
+                "age" to age,
+                "userId" to userId
+            )
             /*
             startActivity<RealMainActivity>(
                 "name" to name,

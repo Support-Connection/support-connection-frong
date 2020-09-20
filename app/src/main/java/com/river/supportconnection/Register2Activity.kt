@@ -54,10 +54,14 @@ class Register2Activity : AppCompatActivity() {
             var phoneNumber = phone_edit.text.toString()
             var agency = tel_edit.text.toString()
 
-            loginService.requestLogin(name,agency,phoneNumber,age).enqueue(object: Callback<Login>{
-                override fun onResponse(call: Call<Login>, response: Response<Login>) {
-                    login = response.body()
-                    var userId = login?.userId
+            var login:Login = Login(name,agency,phoneNumber, age)
+
+
+            loginService.requestLogin(login).enqueue(object: Callback<Int>{
+                override fun onResponse(call: Call<Int>, response: Response<Int>) {
+                    var userId = response.body().toString().toInt()
+
+
                     startActivity<ShareActivity>(
                         "name" to name,
                         "age" to age,
@@ -66,7 +70,7 @@ class Register2Activity : AppCompatActivity() {
                     finish()
                 }
 
-                override fun onFailure(call: Call<Login>, t: Throwable) {
+                override fun onFailure(call: Call<Int>, t: Throwable) {
                     Log.e("LOGIN", t.message!!)
                     var dialog = AlertDialog.Builder(this@Register2Activity)
                     dialog.setTitle("Error")

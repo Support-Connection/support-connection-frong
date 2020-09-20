@@ -18,6 +18,8 @@ class InputInfo3Activity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_info3)
 
+        val userId = intent.getIntExtra("user_id",0)
+        val age = intent.getIntExtra("age",0)
         val province = intent.getStringExtra("province")
         val district = intent.getStringExtra("district")
         val incomeGroup = intent.getIntExtra("incomeGroup",0)
@@ -48,6 +50,8 @@ class InputInfo3Activity: AppCompatActivity() {
             intent.putExtra("province",province)
             intent.putExtra("district",district)
             intent.putExtra("incomeGroup",incomeGroup)
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
             intent.putExtra("income", editincome.text.toString())
             startActivity(intent)
         }

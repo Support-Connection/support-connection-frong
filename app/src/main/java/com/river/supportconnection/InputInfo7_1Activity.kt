@@ -19,6 +19,8 @@ class InputInfo7_1Activity: AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_info7_1)
 
+        val userId = intent.getIntExtra("user_id",0)
+        val age = intent.getIntExtra("age",0)
         val province = intent.getStringExtra("province")
         val district = intent.getStringExtra("district")
         val incomeGroup = intent.getIntExtra("incomeGroup",0)
@@ -44,8 +46,7 @@ class InputInfo7_1Activity: AppCompatActivity()  {
 
         info7_1_button1.setOnClickListener {
             //var userId = HomeFragment().arguments?.getInt("userId")
-            var userId = 6
-            var condition:Condition = Condition(userId,province.toString(),district.toString(),0,20,incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,1,1,0,"",0,0)
+            var condition:Condition = Condition(userId.toString().toInt() ,province.toString(),district.toString(),0,age.toString().toInt(),incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,1,1,0,"",0,0)
             conditionService.requiresCondition(condition).enqueue(object: Callback<Conditions> {
                 override fun onResponse(call: Call<Conditions>, response: Response<Conditions>) {
                     Log.d("Responseee:: ", response.body().toString())
@@ -66,8 +67,7 @@ class InputInfo7_1Activity: AppCompatActivity()  {
 
         info7_1_button2.setOnClickListener {
             //var userId = HomeFragment().arguments?.getInt("userId")
-            var userId = 6
-            var condition:Condition = Condition(userId,province.toString(),district.toString(),0,20,incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,1,0,0,"",0,0)
+            var condition:Condition = Condition(userId.toString().toInt() ,province.toString(),district.toString(),0,age.toString().toInt(),incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,1,0,0,"",0,0)
             conditionService.requiresCondition(condition).enqueue(object: Callback<Conditions> {
                 override fun onResponse(call: Call<Conditions>, response: Response<Conditions>) {
                     Log.d("Responseee:: ", response.body().toString())

@@ -19,6 +19,8 @@ class InputInfo7_5Activity: AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_info7_5)
 
+        val userId = intent.getIntExtra("user_id",0)
+        val age = intent.getIntExtra("age",0)
         val province = intent.getStringExtra("province").toString()
         val district = intent.getStringExtra("district").toString()
         val incomeGroup = intent.getIntExtra("incomeGroup", 0)
@@ -51,8 +53,7 @@ class InputInfo7_5Activity: AppCompatActivity()  {
 
             var annualSale = annual_sale_edit.text.toString().toInt()
             //var userId = HomeFragment().arguments?.getInt("userId")
-            var userId = 6
-            var condition:Condition = Condition(userId,province,district,0,20,incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,occupation,isTemporary,isUnemployed,businessType,businessScale,annualSale)
+            var condition:Condition = Condition(userId.toString().toInt() ,province,district,0,age.toString().toInt(),incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,occupation,isTemporary,isUnemployed,businessType,businessScale,annualSale)
             conditionService.requiresCondition(condition).enqueue(object: Callback<Conditions> {
                 override fun onResponse(call: Call<Conditions>, response: Response<Conditions>) {
                     Log.d("Responseee:: ", response.body().toString())

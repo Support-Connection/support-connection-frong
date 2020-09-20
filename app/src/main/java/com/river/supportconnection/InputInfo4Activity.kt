@@ -10,6 +10,8 @@ class InputInfo4Activity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_input_info4)
 
+        val userId = intent.getIntExtra("user_id",0)
+        val age = intent.getIntExtra("age",0)
         val province = intent.getStringExtra("province")
         val district = intent.getStringExtra("district")
         val incomeGroup = intent.getIntExtra("incomeGroup",0)
@@ -24,6 +26,8 @@ class InputInfo4Activity: AppCompatActivity() {
         info4_button1.setOnClickListener {
             val intent = Intent(this, InputInfo5Activity::class.java)
             intent.putExtra("province",province)
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
             intent.putExtra("district",district)
             intent.putExtra("incomeGroup",incomeGroup)
             intent.putExtra("income",income)
@@ -34,6 +38,8 @@ class InputInfo4Activity: AppCompatActivity() {
         info4_button2.setOnClickListener {
             val intent = Intent(this, InputInfo5Activity::class.java)
             intent.putExtra("province",province)
+            intent.putExtra("userId", userId)
+            intent.putExtra("age",age)
             intent.putExtra("district",district)
             intent.putExtra("incomeGroup",incomeGroup);
             intent.putExtra("income",income)
