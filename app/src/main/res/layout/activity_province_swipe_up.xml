@@ -59,7 +59,7 @@
                 android:layout_height="54dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginLeft="25dp"
-                android:text="서울시"
+                android:text="서울특별시"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/province_img1"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -84,13 +84,41 @@
                 style="@style/tel_style"
                 android:layout_width="0dp"
                 android:layout_height="54dp"
-                android:text="인천시"
+                android:text="인천광역시"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/province_img3"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/province_text2"
                 app:layout_constraintTop_toBottomOf="@+id/province_text2"
                 app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/province_text4"
+                style="@style/tel_style"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:text="부산광역시"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/province_img3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/province_text3"
+                app:layout_constraintTop_toBottomOf="@+id/province_text3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/province_text5"
+                style="@style/tel_style"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:text="대전광역시"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/province_img4"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/province_text4"
+                app:layout_constraintTop_toBottomOf="@+id/province_text4"
+                app:layout_constraintVertical_bias="0.0" />
+
+
 
 
             <ImageView

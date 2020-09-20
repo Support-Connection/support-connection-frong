@@ -48,7 +48,7 @@ class InputInfo1Activity : AppCompatActivity() {
 
             val seoul = SView.findViewById<TextView>(R.id.province_text1)
             seoul.setOnClickListener {
-                province_edit.setText("서울시")
+                province_edit.setText("서울특별시")
                 provincetag.visibility = View.VISIBLE
                 districttag.visibility = View.VISIBLE
                 dialog.dismiss()
@@ -63,7 +63,7 @@ class InputInfo1Activity : AppCompatActivity() {
             }
             val incheon = SView.findViewById<TextView>(R.id.province_text3)
             incheon.setOnClickListener {
-                province_edit.setText("인천")
+                province_edit.setText("인천광역시")
                 provincetag.visibility = View.VISIBLE
                 districttag.visibility = View.VISIBLE
                 dialog.dismiss()
