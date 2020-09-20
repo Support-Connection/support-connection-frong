@@ -81,7 +81,7 @@ class InputInfo7_2Activity: AppCompatActivity() {
                     dialog.show()
                 }
             })
-            startActivity<Jasaninput_activity>(
+            startActivity<RealMainActivity>(
                 "name" to name,
                 "age" to age,
                 "uerId" to userId
@@ -120,7 +120,7 @@ class InputInfo7_2Activity: AppCompatActivity() {
                     Log.e("Condition", t.message!!)
                 }
             })
-            startActivity<Jasaninput_activity>(
+            startActivity<RealMainActivity>(
                 "name" to name,
                 "age" to age,
                 "uerId" to userId

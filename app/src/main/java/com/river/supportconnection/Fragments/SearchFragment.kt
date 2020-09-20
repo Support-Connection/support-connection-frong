@@ -25,11 +25,7 @@ class SearchFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val userId by lazy { requireArguments().getInt("userId") }
-
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -65,12 +61,14 @@ class SearchFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(name: String?) =
             SearchFragment().apply {
+                val fragment=SearchFragment()
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    //    putString(ARG_NAME, name)
                 }
+                // fragment.arguments = bundle
+                // return fragment
             }
     }
 }

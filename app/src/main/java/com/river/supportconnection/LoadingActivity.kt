@@ -1,11 +1,9 @@
 package com.river.supportconnection
 
 import android.os.Bundle
-import android.text.SpannableStringBuilder
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_share.*
-import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.activity_loading.*
 import org.jetbrains.anko.startActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -13,11 +11,15 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ShareActivity : AppCompatActivity() {
+@JvmField
+var data:MutableList<recyclerData> = mutableListOf<recyclerData>()
+
+class LoadingActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_share)
-
+        setContentView(R.layout.activity_loading)
 
         // 사용자 기본 data
         val name = intent.getStringExtra("name")
@@ -33,30 +35,71 @@ class ShareActivity : AppCompatActivity() {
         var loan = 0
         var interestRate = 0.0
         var creditRate = 3
+        var currentInterest = 0
+        var reduceInterest = 0
+        var listSupport:MutableList<Support> = mutableListOf()
 
-
-        // 이름 변경
-        share_text1.text = "안녕하세요 " + name + "님,\n서폿커넥션에 잘오셨어요!"
 
 
         // -- Intent -- (Anko 사용)
-        next_share.setOnClickListener {
-            startActivity<LoadingActivity>(
-                "name" to name,
-                "age" to age,
-                "userId" to userId,
-            )
-
-            /*
+        loading_text.setOnClickListener {
             // 서버 연결 :: 최대지원금 뿌려주기
             val retrofit = Retrofit.Builder()
                 .baseUrl("http://133.186.241.35:8001")
                 .addConverterFactory(GsonConverterFactory.create()).build()
 
+
+            val financeService: FinanceService = retrofit.create(FinanceService::class.java)
+            financeService.getMain(userId).enqueue(object: Callback<Finance> {
+                override fun onResponse(call: Call<Finance>, response: Response<Finance>) {
+                    Log.e("discount", response.body().toString())
+                    var finance:Finance? = response.body()
+
+                    currentInterest = finance?.currentInterest!!
+                    reduceInterest = finance?.reduceInterest!!
+                    listSupport = finance?.supports!!
+
+
+
+                    var j = 0
+                    listSupport.forEach{
+                        it ->
+                        var re:recyclerData = recyclerData(0,"","",0.0,0)
+                        re?.supportId = it.supportId
+                        re?.institution = it.name
+                        re?.specific = it.site
+                        re?.rate = it.rate
+                        re?.saving = it.reduceInterest
+                        data.add(re)
+
+                    }
+                    /*
+                    for(i in listSupport.filterNotNull()){
+                        re?.supportId = i.supportId
+                        re?.institution = i.name
+                        re?.specific = i.site
+                        re?.rate = i.rate
+                        re?.saving = i.reduceInterest
+                        data.add(j,re)
+
+                        j++
+                    }*/
+
+
+                    Log.e("support", data.toString())
+
+                }
+
+                override fun onFailure(call: Call<Finance>, t: Throwable) {
+                    Log.e("discount", t.message!!)
+                }
+            })
+
+
+
             val mainService: MainService = retrofit.create(MainService::class.java)
 
             mainService.getMain(userId).enqueue(object: Callback<Main> {
-
                 override fun onResponse(call: Call<Main>, response: Response<Main>) {
                     var main:Main? = response.body()
 
@@ -82,14 +125,18 @@ class ShareActivity : AppCompatActivity() {
                         "annualIncome" to annualIncome,
                         "loan" to loan,
                         "interestRate" to interestRate,
-                        "creditRate" to creditRate
+                        "creditRate" to creditRate,
+                        "currentInterest" to currentInterest,
+                        "reduceInterest" to reduceInterest,
+                        //"data" to data
                     )
+                    finish()
                 }
                 override fun onFailure(call: Call<Main>, t: Throwable) {
                     Log.e("Main", t.message!!)
 
                 }
-            })*/
+            })
 
 
 

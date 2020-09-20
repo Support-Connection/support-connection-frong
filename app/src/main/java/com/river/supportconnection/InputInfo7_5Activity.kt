@@ -54,7 +54,7 @@ class InputInfo7_5Activity: AppCompatActivity()  {
 
             var annualSale = annual_sale_edit.text.toString().toInt()
 
-            var condition:Condition = Condition(userId,province,district,0,20,incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,occupation,isTemporary,isUnemployed,businessType,businessScale,annualSale)
+            var condition:Condition = Condition(userId,province,district,0,age,incomeGroup,income,isMarried,haveChild,0,childAge,isPregnant,occupation,isTemporary,isUnemployed,businessType,businessScale,annualSale)
             conditionService.requiresCondition(condition).enqueue(object: Callback<Conditions> {
                 override fun onResponse(call: Call<Conditions>, response: Response<Conditions>) {
                     Log.d("Responseee:: ", response.body().toString())
@@ -69,7 +69,7 @@ class InputInfo7_5Activity: AppCompatActivity()  {
                     dialog.show()
                 }
             })
-            startActivity<Jasaninput_activity>(
+            startActivity<RealMainActivity>(
                 "name" to name,
                 "age" to age,
                 "uerId" to userId

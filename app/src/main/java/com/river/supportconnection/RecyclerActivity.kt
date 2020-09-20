@@ -7,11 +7,23 @@ import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_recycler.*
+import kotlinx.android.synthetic.main.fdc_recycler.view.*
 
 class RecyclerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
+
+        //데이터 연동해서 상세 정보 보여주기
+        val supportId = intent.getStringExtra("supportId")
+        val name = intent.getStringExtra("institution")
+        val site = intent.getStringExtra("specific")
+        var rate = intent.getStringExtra("rate")
+        var saving = intent.getStringExtra("saving")
+
+        // /apply/supports/supportId 서버연동해서 값 가져오기
+        // 쉬운 지원금 수정
+        // 신용등급, 잔액 입력하는 페이지 
 
         // Bottom Sheet 클릭 이벤트
         val dialog = BottomSheetDialog(this)
@@ -40,12 +52,6 @@ class RecyclerActivity : AppCompatActivity() {
             dialog.setContentView(SView)
             dialog.show()
         }
-
-        // 이미지 drawable 관련 코드 작성 필요
-        val institution = intent.getStringExtra("institution")
-        val specific = intent.getStringExtra("specific")
-        val rate = intent.getStringExtra("rate")
-        val saving = intent.getStringExtra("saving")
 
         // + - showing
         var a=0

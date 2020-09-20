@@ -60,7 +60,7 @@ class InputInfo7Activity: AppCompatActivity()  {
                     dialog.show()
                 }
             })
-            startActivity<Jasaninput_activity>(
+            startActivity<LoadingActivity>(
                 "userId" to userId,
                 "age" to age,
                 "name" to name
@@ -136,7 +136,7 @@ class InputInfo7Activity: AppCompatActivity()  {
                     dialog.show()
                 }
             })
-            startActivity<Jasaninput_activity>(
+            startActivity<RealMainActivity>(
                 "userId" to userId,
                 "age" to age,
                 "name" to name

@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoanActivity"></activity>
+        <activity android:name=".LoanActivity"/>
+        <activity android:name=".LoadingActivity"/>
         <activity android:name=".Jasaninput_activity" />
         <activity android:name=".RecyclerActivity" />
         <activity android:name=".InputInfo1Activity" />

@@ -41,18 +41,28 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val userId by lazy { requireArguments().getInt("userId") }
         val name by lazy { requireArguments().getString("name") }
         val totalAmount by lazy { requireArguments().getInt("totalAmount") }
         val cashAmount by lazy { requireArguments().getInt("cashAmount")}
         val financialAmount by lazy { requireArguments().getInt("financialAmount")}
         val myAsset by lazy { requireArguments().getInt("myAsset") }
+        val supportRemain by lazy {requireArguments().getInt("supportRemain")}
 
         fhome_text1.text=name
         fhome_text3.text=totalAmount.toString()
         fhome_text9.text=cashAmount.toString()
         fhome_text12.text=financialAmount.toString()
         fhome_text16.text=myAsset.toString()
+        fhome_text19.text=supportRemain.toString()
 
+        fhome_btn1.setOnClickListener(){
+            activity?.startActivity<InputInfo1Activity>(
+                "name" to name,
+                "age" to 20,
+                "userId" to userId
+            )
+        }
         fhome_btn2.setOnClickListener {
             (activity as RealMainActivity).mViewpager.currentItem = 1
         }

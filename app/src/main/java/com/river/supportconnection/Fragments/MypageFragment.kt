@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.river.supportconnection.R
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_mypage.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,8 +27,6 @@ class MypageFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
         }
     }
 
@@ -36,6 +36,18 @@ class MypageFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mypage, container, false)
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val userId by lazy { requireArguments().getInt("userId") }
+        val name by lazy { requireArguments().getString("name") }
+        val age by lazy { requireArguments().getInt("age") }
+
+
+        fmypage_text2.text=name
+        fmypage_text3.text= age.toString() +"세"
+
     }
 
     companion object {
@@ -49,12 +61,14 @@ class MypageFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(name: String?) =
             MypageFragment().apply {
+                val fragment=MypageFragment()
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    //    putString(ARG_NAME, name)
                 }
+                // fragment.arguments = bundle
+                // return fragment
             }
     }
 }

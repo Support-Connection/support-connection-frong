@@ -26,72 +26,121 @@ class RealMainActivity : AppCompatActivity() {
 
     private lateinit var mViewPager: ViewPager
     private lateinit var mPageAdapter: PageAdapter
-    var main:Main? = null
 
-    // (계산되서 main에 뿌려줄) 기본 data들 (> HomeActivity로 이동)
+
+
     var name = ""
     var age = 0
     var userId = 0
-    var totalAmount=0
+
+    var totalAmount = 0
     var cashAmount=0
     var financialAmount=0
     var supportRemain=0
 
-
-    // (입력받을) 기본 data들 : 사용자 입력
-    //<3>
     var myAsset = 0
     var annualIncome = 0
     var loan = 0
-    var interestRate = 10.0
+    var interestRate = 0.0
 
-    // (입력X않을) 기본 data들 : 초깃값 이용
+
     var creditRate = 3
-    var currencInterest = 20000000
+
+    var currentInterest = 20000000
     var reduceInterest = 19000000
 
+    var listSupport = mutableListOf<Support>()
+
+    //var finance: Finance? = null
+
+    //var data:MutableList<recyclerData> = mutableListOf<recyclerData>()
+    //var data = ArrayList<recyclerData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_real_main)
 
         // 기본 data
+
+
+        //data = intent.getParcelableArrayListExtra<recyclerData>("data")!!
+        //Log.e("support", data.toString())
+
         name= intent.getStringExtra("name").toString()
         age=intent.getIntExtra("age",0)
         userId=intent.getIntExtra("userId",0)
+        totalAmount = intent.getIntExtra("totalAmount",0)
+        cashAmount = intent.getIntExtra("cashAmount",0)
+        financialAmount = intent.getIntExtra("financialAmount",0)
         myAsset=intent.getIntExtra("myAsset",0)
+        supportRemain=intent.getIntExtra("supportRemain",0)
         annualIncome = intent.getIntExtra("annualIncome",0)
         loan = intent.getIntExtra("loan",0)
         interestRate = intent.getDoubleExtra("interestRate",0.0)
+        creditRate = intent.getIntExtra("creditRate",3)
+        currentInterest = intent.getIntExtra("currentInterest",0)
+        reduceInterest = intent.getIntExtra("reduceInterest",0)
 
 
-        // 서버 연결 :: 최대지원금 뿌려주기
-        val retrofit = Retrofit.Builder()
-            .baseUrl("http://133.186.241.35:8001")
-            .addConverterFactory(GsonConverterFactory.create()).build()
-        val mainService: MainService = retrofit.create(MainService::class.java)
-        mainService.getMain(userId).enqueue(object: Callback<Main>{
-            override fun onResponse(call: Call<Main>, response: Response<Main>) {
-                main = response.body()
-                totalAmount = main?.totalAmount ?: 0
-                cashAmount = main?.cashAmount!!
-                financialAmount = main?.financialAmount!!
-                myAsset = main?.financialAmount!!
-                supportRemain = main?.supportRemain ?: 0
+
+
+
+
+
+        //금융 비용 줄이기 서버 연동
+/*
+        val financeService: FinanceService = retrofit.create(FinanceService::class.java)
+        financeService.getMain(1).enqueue(object: Callback<Finance> {
+            override fun onResponse(call: Call<Finance>, response: Response<Finance>) {
+                Log.e("discount", response.body().toString())
+                finance = response.body()
+                interestRate = finance?.interestRate ?:0.0
+                creditRate = finance?.creditRate?:0
+                currentInterest = finance?.currentInterest?:0
+                reduceInterest = finance?.reduceInterest?:0
+                annualIncome = finance?.annualIncome?:0
+                myAsset = finance?.myAsset?:0
+                listSupport = finance?.supports as MutableList<Support>? ?: mutableListOf<Support>()
+
             }
 
-            override fun onFailure(call: Call<Main>, t: Throwable) {
+            override fun onFailure(call: Call<Finance>, t: Throwable) {
                 Log.e("LOGIN", t.message!!)
-                var dialog = AlertDialog.Builder(this@RealMainActivity)
-                dialog.setTitle("Error")
-                dialog.setMessage("연결 실패하였습니다.")
-                dialog.show()
+                //var dialog = AlertDialog.Builder(this@)
+                //dialog.setTitle("Error")
+                //dialog.setMessage("연결 실패하였습니다.")
+                //dialog.show()
             }
         })
 
+*/
 
         HomeFragment().apply {
             arguments = Bundle().apply {
+                putString("name",name)
+            }
+        }
+
+        SearchFragment().apply{
+            arguments = Bundle().apply{
+                putString("name",name)
+            }
+        }
+
+        AlertFragment().apply {
+            arguments = Bundle().apply{
+                putString("name",name)
+            }
+        }
+
+        DiscountFragment().apply{
+            arguments = Bundle().apply{
+                putString("name",name)
+            }
+        }
+
+        MypageFragment().apply{
+            arguments = Bundle().apply{
                 putString("name",name)
             }
         }
@@ -139,10 +188,12 @@ class RealMainActivity : AppCompatActivity() {
         }
 
         discountBtn.setOnClickListener{
+
             mViewPager.currentItem = 2
 
             // data 올려주기
-            val data = loadData()
+            ///Log.e("discount", data.toString())
+           // val data = loadData()
             val adapter = CustomAdapter()
             adapter.listData = data
             fdiscount_recycler.adapter = adapter
@@ -198,12 +249,21 @@ class RealMainActivity : AppCompatActivity() {
     }
 
     // data 올려주기
+
     fun loadData(): MutableList<recyclerData>{
+
         val data:MutableList<recyclerData> = mutableListOf()
 
-        // data들 올려주기 (변경필요!)
-        val text1= "금융위원회"
-
+        for(i in 0..listSupport.size-1){
+            var su = listSupport.get(i)
+            var re: recyclerData? = null
+            re?.institution ?: su?.site
+            re?.specific ?: su?.name
+            re?.rate ?: su?.rate
+            re?.saving ?: su?.reduceInterest
+            re?.let { data.add(it) }
+        }
+        Log.e("discount", data.toString())
         return data
     }
 
@@ -225,6 +285,7 @@ class RealMainActivity : AppCompatActivity() {
                             putInt("cashAmount",this@RealMainActivity.cashAmount)
                             putInt("financialAmount",this@RealMainActivity.financialAmount)
                             putInt("myAsset",this@RealMainActivity.myAsset)
+                            putInt("supportRemain", this@RealMainActivity.supportRemain)
                         }
                     }
                 }
@@ -244,6 +305,13 @@ class RealMainActivity : AppCompatActivity() {
                         arguments = Bundle().apply {
                             putInt("userId", this@RealMainActivity.userId)
                             putString("name", this@RealMainActivity.name)
+                            putString("interestRate",this@RealMainActivity.interestRate.toString())
+                            putInt("creditRate",this@RealMainActivity.creditRate)
+                            putInt("annualIncome",this@RealMainActivity.annualIncome)
+                            putInt("myAsset",this@RealMainActivity.myAsset)
+                            putInt("currentInterest", this@RealMainActivity.currentInterest)
+                            putInt("reduceInterest", this@RealMainActivity.reduceInterest)
+
                         }
                     }
                 }
@@ -252,6 +320,8 @@ class RealMainActivity : AppCompatActivity() {
                         arguments = Bundle().apply {
                             putInt("userId",this@RealMainActivity.userId)
                             putString("name",this@RealMainActivity.name)
+                            putInt("supportRemain", this@RealMainActivity.supportRemain)
+
                         }
                     }
                 }
@@ -260,6 +330,8 @@ class RealMainActivity : AppCompatActivity() {
                         arguments = Bundle().apply {
                             putInt("userId",this@RealMainActivity.userId)
                             putString("name",this@RealMainActivity.name)
+                            putInt("age",this@RealMainActivity.age)
+
                         }
                     }
                 }

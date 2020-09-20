@@ -138,19 +138,15 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/fsearch_resultView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_width="369dp"
+                android:layout_height="179dp"
                 android:layout_marginTop="28dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
                 android:background="@drawable/round_corner_white"
                 android:elevation="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/fsearchtext_5"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/fsearchtext_5"
                 app:layout_constraintVertical_bias="0.0">
 
@@ -277,38 +273,6 @@
                     app:layout_constraintVertical_bias="0.0"
                     app:lineHeight="19sp" />
 
-                <TextView
-                    android:id="@+id/fsearch_text13"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="60dp"
-                    android:layout_marginRight="60dp"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:text="현물지원 예시 1개"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/fsearch_text9"
-                    app:layout_constraintTop_toBottomOf="@+id/fsearch_text9"
-                    app:layout_constraintVertical_bias="0.0" />
-
-                <TextView
-                    android:id="@+id/fsearch_text14"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="60dp"
-                    android:layout_marginRight="60dp"
-                    android:layout_marginBottom="27dp"
-                    android:text="현물지원 예시 2개"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/fsearch_text13"
-                    app:layout_constraintTop_toBottomOf="@+id/fsearch_text13"
-                    app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
