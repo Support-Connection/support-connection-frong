@@ -13,29 +13,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoanActivity"/>
-        <activity android:name=".LoadingActivity"/>
-        <activity android:name=".Jasaninput_activity" />
-        <activity android:name=".RecyclerActivity" />
-        <activity android:name=".InputInfo1Activity" />
-        <activity android:name=".InputInfo2Activity" />
-        <activity android:name=".InputInfo3Activity" />
-        <activity android:name=".InputInfo4Activity" />
-        <activity android:name=".InputInfo5Activity" />
-        <activity android:name=".InputInfo5_1Activity" />
-        <activity android:name=".InputInfo6Activity" />
-        <activity android:name=".InputInfo7Activity" />
-        <activity android:name=".InputInfo7_1Activity" />
-        <activity android:name=".InputInfo7_2Activity" />
-        <activity android:name=".InputInfo7_3Activity" />
-        <activity android:name=".InputInfo7_4Activity" />
-        <activity android:name=".InputInfo7_5Activity" />
-        <activity android:name=".RealMainActivity" />
-        <activity android:name=".ShareActivity" />
-        <activity android:name=".Register2Activity" />
-        <activity android:name=".Register1Activity" />
+        <activity android:name=".ui.LoanActivity"/>
+        <activity android:name=".ui.LoadingActivity"/>
+        <activity android:name=".ui.Jasaninput_activity" />
+        <activity android:name=".ui.RecyclerActivity" />
+        <activity android:name=".ui.inputinfo.InputInfo1Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo2Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo3Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo4Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo5Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo5_1Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo6Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo7Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo7_1Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo7_2Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo7_3Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo7_4Activity" />
+        <activity android:name=".ui.inputinfo.InputInfo7_5Activity" />
+        <activity android:name=".ui.RealMainActivity" />
+        <activity android:name=".ui.ShareActivity" />
+        <activity android:name=".ui.register.Register2Activity" />
+        <activity android:name=".ui.register.Register1Activity" />
         <activity
-            android:name=".Splash_Activity"
+            android:name=".ui.splash.Splash_Activity"
             android:noHistory="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -44,7 +44,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

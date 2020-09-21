@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbarSize="29sp"
-    tools:context=".Register2Activity">
+    tools:context=".ui.register.Register2Activity">
 
     <Button
         android:id="@+id/beforebtn2"

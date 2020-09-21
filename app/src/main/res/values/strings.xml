@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">SupportConnection</string>
+    <string name="base_url">133.</string>
     // Splash Activity
     <string name="app_naming">Support\nConnection</string>
     <string name="textInfo">정부지원금 자격요건 체크서비스</string>

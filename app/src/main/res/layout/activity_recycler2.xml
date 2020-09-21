@@ -54,7 +54,7 @@
                 android:ellipsize="marquee"
                 android:fontFamily="@font/noto_sans_bold"
                 android:singleLine="true"
-                android:text="'힘내라 대한민국' 특별운영자금"
+                android:text="청년희망키움통장"
                 android:textColor="#454545"
                 android:textSize="22sp"
                 app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
@@ -73,7 +73,7 @@
                 android:ellipsize="marquee"
                 android:fontFamily="@font/noto_sans"
                 android:singleLine="true"
-                android:text="* 금융위원회 사무처 금융정책국 산업금융과"
+                android:text="경기도 용인시 복지여성국 복지정책과"
                 android:textColor="#747f89"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
@@ -93,7 +93,7 @@
                 android:fontFamily="@font/noto_sans_bold"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="최대 0.60%p"
+                android:text="현금/현물"
                 android:textColor="#3B85BC"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/recycler_view"
@@ -113,7 +113,7 @@
                 android:fontFamily="@font/noto_sans_bold"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="*최대 100억원"
+                android:text="용인시"
                 android:textColor="#3B85BC"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -135,7 +135,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@mipmap/man_image_foreground" />
+                app:srcCompat="@mipmap/ic_girl_foreground" />
 
             <ImageView
                 android:id="@+id/recycler_view2"
@@ -157,7 +157,7 @@
                 android:layout_marginLeft="143dp"
                 android:layout_marginTop="55dp"
                 android:fontFamily="@font/noto_sans_bold"
-                android:text="절감가능 "
+                android:text="신청 가능 "
                 android:textColor="#454545"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
@@ -173,7 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/noto_sans"
-                android:text="이자비용"
+                android:text="지원금"
                 android:textColor="#454545"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
@@ -190,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="55dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="220,000 원"
+                android:text="14,200,000원"
                 android:textColor=" #50b3fc"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/recycler_view"
@@ -263,13 +263,11 @@
                 android:paddingBottom="17dp"
                 android:text="TextView"
                 android:textColor="#75808a "
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/recycler_icon3"
-                app:layout_constraintTop_toBottomOf="@+id/recycler_icon3"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/recycler_icon3" />
 
             <ImageButton
                 android:id="@+id/recycler_icon4"
@@ -316,13 +314,11 @@
                 android:paddingBottom="17dp"
                 android:text="TextView"
                 android:textColor="#75808a "
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/recycler_icon4"
-                app:layout_constraintTop_toBottomOf="@+id/recycler_icon4"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/recycler_icon4" />
 
             <ImageButton
                 android:id="@+id/recycler_icon5"
@@ -333,9 +329,9 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/recycler_text10"
+                app:layout_constraintStart_toStartOf="@+id/recycler_icon4"
                 app:layout_constraintTop_toBottomOf="@+id/recycler_text10"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_bias="0.014"
                 app:srcCompat="@drawable/ic_16" />
 
             <TextView
@@ -368,13 +364,11 @@
                 android:text="@string/rc_text10"
                 android:textColor=" #50b3fc "
                 android:textSize="16sp"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/recycler_icon5"
                 app:layout_constraintTop_toBottomOf="@+id/recycler_icon5"
-                app:layout_constraintVertical_bias="0.0"
                 app:lineHeight="24sp" />
 
             <TextView
@@ -390,13 +384,11 @@
                 android:paddingBottom="17dp"
                 android:text="TextView"
                 android:textColor="#75808a "
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/recycler_icon5"
-                app:layout_constraintTop_toBottomOf="@+id/recycler_text12"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/recycler_text12" />
 
             <Button
                 android:id="@+id/recycler_applybtn"
