@@ -1,19 +1,17 @@
 package com.river.supportconnection.Fragments
 
-import android.app.PendingIntent.getActivity
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.viewpager.widget.PagerAdapter
-import androidx.viewpager.widget.ViewPager
-import com.google.android.material.internal.ContextUtils.getActivity
 import com.river.supportconnection.*
+import com.river.supportconnection.ui.RealMainActivity
+import com.river.supportconnection.ui.inputinfo.InputInfo1Activity
 import kotlinx.android.synthetic.main.activity_real_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.jetbrains.anko.startActivity
+import java.text.NumberFormat
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -50,9 +48,9 @@ class HomeFragment : Fragment() {
         val supportRemain by lazy {requireArguments().getInt("supportRemain")}
 
         fhome_text1.text=name
-        fhome_text3.text=totalAmount.toString()
-        fhome_text9.text=cashAmount.toString()
-        fhome_text12.text=financialAmount.toString()
+        fhome_text3.text=getNumberText(totalAmount.toString())
+        fhome_text9.text=getNumberText(cashAmount.toString())
+        fhome_text12.text=getNumberText(financialAmount.toString())
         fhome_text16.text=myAsset.toString()
         fhome_text19.text=supportRemain.toString()
 
@@ -96,5 +94,9 @@ class HomeFragment : Fragment() {
                 // return fragment
             }
     }
+    private fun getNumberText(text: String): String {
+        return if (text.length > 1) NumberFormat.getNumberInstance().format(text.replace(",", "").toDouble()) else text
+    }
+
 
 }

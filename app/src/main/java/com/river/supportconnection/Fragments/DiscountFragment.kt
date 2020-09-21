@@ -1,21 +1,16 @@
 package com.river.supportconnection.Fragments
 
-import android.app.AlertDialog
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.river.supportconnection.*
-import com.river.supportconnection.Adapter.CustomAdapter
+import com.river.supportconnection.ui.Jasaninput_activity
+import com.river.supportconnection.ui.LoanActivity
 import kotlinx.android.synthetic.main.fragment_discount.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import org.jetbrains.anko.startActivity
+import java.text.NumberFormat
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,13 +60,34 @@ class DiscountFragment : Fragment() {
         val reduceInterest by lazy { requireArguments().getInt("reduceInterest") }
 
         fdiscount_text2.setText(name)
-        fdiscounttext_5.setText(interestRate)
+        fdiscounttext_5.setText(interestRate + "%")
 
         fdiscount_text7.setText(creditRate.toString())
-        fdiscount_text10.setText(currentInterest.toString())
-        fdiscount_text11.setText(reduceInterest.toString())
-        fdiscount_text14.setText(annualIncome.toString())
-        fdiscount_text17.setText(myAsset.toString())
+
+        if(interestRate.toString().toDouble() > 5){
+            fdiscount_text10.setText(getNumberText(480000.toString()))
+            fdiscount_text11.setText(getNumberText(420000.toString()))
+        }else {
+
+            fdiscount_text10.setText(getNumberText(currentInterest.toString()))
+            fdiscount_text11.setText(getNumberText(reduceInterest.toString()))
+            fdiscount_text14.setText(annualIncome.toString())
+            fdiscount_text17.setText(myAsset.toString())
+
+        }
+
+        button2.setOnClickListener {
+            activity?.startActivity<Jasaninput_activity>(
+            )
+        }
+
+        fdiscount_btn1.setOnClickListener {
+            activity?.startActivity<LoanActivity>(
+                "userId" to userId
+            )
+        }
+
+
 
 
     }
@@ -97,4 +113,8 @@ class DiscountFragment : Fragment() {
                 // return fragment
             }
     }
+    private fun getNumberText(text: String): String {
+        return if (text.length > 1) NumberFormat.getNumberInstance().format(text.replace(",", "").toDouble()) else text
+    }
+
 }

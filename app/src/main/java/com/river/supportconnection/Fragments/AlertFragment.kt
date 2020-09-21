@@ -6,12 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.river.supportconnection.R
-import com.river.supportconnection.RealMainActivity
-import com.river.supportconnection.SupportRemainActivity
 import kotlinx.android.synthetic.main.fragment_alert.*
-import kotlinx.android.synthetic.main.fragment_home.*
-import kotlinx.android.synthetic.main.fragment_mypage.*
-import org.jetbrains.anko.startActivity
+import java.text.NumberFormat
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,7 +45,7 @@ class AlertFragment : Fragment() {
 
 
         falert_text2.text=name + "님의"
-        falert_text5.text= supportRemain.toString()
+        falert_text5.text= getNumberText(supportRemain.toString())
 
         falert_input_btn.setOnClickListener {
             //activity?.startActivity<SupportRemainActivity>(
@@ -79,5 +75,8 @@ class AlertFragment : Fragment() {
                 // fragment.arguments = bundle
                 // return fragment
             }
+    }
+    private fun getNumberText(text: String): String {
+        return if (text.length > 1) NumberFormat.getNumberInstance().format(text.replace(",", "").toDouble()) else text
     }
 }
